@@ -21,7 +21,7 @@ const winPatterns = [
 const res = () =>{
     let turnO = true;
     enableBox();
-    msgContainer.classList.remove("hide");
+    msgContainer.classList.add("hide");
 }
 
 boxes.forEach((box)=>{
@@ -53,7 +53,7 @@ const disBox = () =>{
 const enableBox = () =>{
     for(let box of boxes)
     {
-        box.enabled =true;
+        box.disabled =false;
         box.innerText ="";
 
     }
@@ -81,5 +81,5 @@ const checkWinner = () =>{
     }
 }
 
-resetBtn.addEventListener("click", res());
-newBtn.addEventListener("click", res());
+resetBtn.addEventListener("click", res);
+newBtn.addEventListener("click", res);
