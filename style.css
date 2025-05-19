@@ -41,3 +41,23 @@ h1{
     border-radius: 1rem;
     background-color: #0a0a0a;
     color:white;
+}
+
+.newBtn{
+    padding: 1.5rem;
+    font-size: 1.25rem;
+    border-radius: 1rem;
+    background-color: #0a0a0a;
+    color:white;
+}
+
+.msg{
+    font-size: 4.5rem;
+    color: black;
+}
+.msg-container{
+    margin-bottom:40rem;
+}
+.hide{
+  display: none;
+}
