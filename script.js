@@ -23,6 +23,7 @@ const res = () =>{
     let turnO = true;
     enableBox();
     msgContainer.classList.add("hide");
+    varCount=0;
 }
 
 boxes.forEach((box)=>{
@@ -32,21 +33,18 @@ boxes.forEach((box)=>{
         {
             box.innerText = "O";
             turnO=false;
-            box.style.color="brown";
         }
         else
         {
             box.innerText = "X";
             turnO=true;
-            box.style.color="black";
         }
         varCount++;
         box.disabled = true;
         let win = checkWinner();
-        if (varCount== 9 && win==false)
+        if (varCount== 9 && !win)
         {
-            drawGame();
-            varCount=0;
+           drawGame();
         }
     });
 });
