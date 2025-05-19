@@ -7,6 +7,7 @@ let hide= document.querySelector(".hide");
 
 
 let turnO = true;
+let varCount = 0;
 const winPatterns = [
     [0,1,2],
     [3,4,5],
@@ -31,15 +32,22 @@ boxes.forEach((box)=>{
         {
             box.innerText = "O";
             turnO=false;
+            box.style.color="brown";
         }
         else
         {
             box.innerText = "X";
             turnO=true;
+            box.style.color="black";
         }
+        varCount++;
         box.disabled = true;
-
-        checkWinner();
+        let win = checkWinner();
+        if (varCount== 9 && win==false)
+        {
+            drawGame();
+            varCount=0;
+        }
     });
 });
 
@@ -55,7 +63,6 @@ const enableBox = () =>{
     {
         box.disabled =false;
         box.innerText ="";
-
     }
 }
 
@@ -65,17 +72,23 @@ const dispWinner = (winner) =>{
     disBox();
 }
 
+const drawGame = () =>{
+    msg.innerText="Try Again!! The game is draw..";
+    msgContainer.classList.remove("hide");
+    disBox();
+}
 const checkWinner = () =>{
     for (pattern of winPatterns){
         let pos1= boxes[pattern[0]].innerText;
         let pos2 = boxes[pattern[1]].innerText;
         let pos3 = boxes[pattern[2]].innerText;
-
+        
         if(pos1!="" && pos2!="" && pos3!="")
         {
             if(pos1==pos2 && pos1==pos3)
             {
                 dispWinner(pos1);
+                return true;
             }
         }
     }
