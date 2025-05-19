@@ -1,0 +1,43 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+body{
+    background-image: url("background.webp");
+    text-align: center;
+}
+h1{
+    font-size: 4.5rem;
+}
+.container{
+    height:70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.game{
+    height: 60vmin;
+    width: 60vmin;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap:1vmin;
+}
+.box{
+    height:18vmin;
+    width:18vmin;
+    border-radius: 10px;
+    background-color: transparent;
+    font-size: 5rem;
+    color: black;
+}
+.box:active{
+    background-color: black;
+}
+.reset{
+    padding: 1.5rem;
+    font-size: 1.25rem;
+    border-radius: 1rem;
+    background-color: #0a0a0a;
+    color:white;
